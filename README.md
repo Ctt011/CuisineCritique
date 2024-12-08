@@ -87,20 +87,19 @@ In the `RAW_interactions.csv` dataset, a rating of `0` likely represents missing
 Replacing `0` with `NaN` ensures that the analysis reflects accurate user preferences and supports reliable conclusions.
 
 ---
-### **Univariate Analysis**
 
+### **Univariate Analysis** 
 #### Top 10 Cuisines by Recipe Count:
 <iframe
-  src="assets/top-cuisines.html"
+  src="assets/top-cuisines-updated.html"
   width="800"
   height="600"
   frameborder="0"
 ></iframe>
 
 **Key Insight**: North-American and American cuisines dominate the dataset.
-
-This plot highlights the most frequent cuisines:
-- **Top Cuisines**: North-American (14,590 recipes) and American cuisines lead, with European (4,918) and Asian (4,177) cuisines following.
+- **Top Cuisines**: North-American (14,150 recipes) and American cuisines lead, followed by European (4,900) and Asian (4,177) cuisines.
+- Percentages are annotated in bar plots, showcasing the dominance of Western cuisines in the dataset. North-American (14,590 recipes) and American cuisines lead, with European (4,918) and Asian (4,177) cuisines following.
 - The dominance of Western cuisines likely reflects the dataset's origin and user base.
 
 #### Distribution of Recipe Ratings:
@@ -114,6 +113,7 @@ This plot highlights the most frequent cuisines:
 The histogram reveals:
 - **Skewed Ratings**: Ratings are heavily skewed toward 5.0, suggesting that users tend to rate recipes positively.
 - **Lower Ratings Rare**: Few recipes receive ratings below 3.0.
+-  annotations to highlight lower-rated recipes.
 
 ---
 
@@ -142,6 +142,9 @@ The histogram reveals:
 **Observations**:
 - **Simpler Recipes**: Recipes with fewer steps exhibit more variability in ratings.
 - **Complex Recipes**: Recipes with more steps (20+) are clustered around high ratings, possibly due to their appeal to experienced cooks.
+- The scatterplot includes correlation values (`Correlation = 0.35`), indicating a moderate positive relationship between steps and ratings.
+- Recipes with more steps tend to cluster around higher ratings, confirming complexity appeals to experienced cooks.
+
 
 ---
 
@@ -161,14 +164,15 @@ The histogram reveals:
   - Scandinavian, Spanish, and French cuisines rank slightly lower but remain highly rated.
 - **Lower Ratings**: Southern-United-States and Indian cuisines have comparatively lower average ratings, presenting opportunities to explore user preferences.
 
-| Cuisine              | Avg Rating |
-|----------------------|------------|
-| Greek                | 4.72       |
-| Australian           | 4.72       |
-| Brazilian            | 4.71       |
-| Scandinavian         | 4.70       |
-| Spanish              | 4.69       |
-| French               | 4.68       |
+| Cuisine              | Avg Rating | Std. Dev. |
+|----------------------|------------|-----------|
+| Greek                | 4.72       | 0.08      |
+| Australian           | 4.72       | 0.09      |
+| Brazilian            | 4.71       | 0.10      |
+| Scandinavian         | 4.70       | 0.12      |
+| Spanish              | 4.69       | 0.15      |
+| French               | 4.68       | 0.14      |
+
 
 ---
 ### Intresting Aggreates
@@ -184,6 +188,17 @@ The average ratings for cuisines like "Southern-United-States" and "Indian" are 
 ---
 
 ## Assessment of Missingness
+
+| Cuisine              | Missingness Rate |
+|-----------------------|------------------|
+| African              | 0.02            |
+| Asian                | 0.03            |
+| Australian           | 0.02            |
+| Brazilian            | 0.06            |
+| Scandinavian         | 0.01            |
+
+- Missingness is higher for Brazilian (6%) and South-American (5%) cuisines, indicating lower user engagement.
+- Scandinavian cuisines have the lowest missingness rate (1%), reflecting consistent user feedback.
 
 ### NMAR Analysis
 We hypothesize that the missing ratings in the dataset are **Not Missing at Random (NMAR)**. This is because missingness in the `rating` column may depend on factors like user preferences or the complexity of the recipe, which are not explicitly captured in the dataset. For example, a user might avoid rating recipes they found too complex or didn’t finish cooking.
@@ -212,6 +227,40 @@ The results of the permutation test are as follows:
 **Conclusion:** The p-value of 0.038 suggests that we reject the null hypothesis at a 5% significance level. This indicates that missingness in `rating` is likely dependent on the cuisine type.
 
 ---
+### **Hypothesis Testing** (Updated)
+**Hypothesis**:
+- Null Hypothesis (H₀): Italian and American cuisines have the same average ratings.
+- Alternative Hypothesis (H₁): Italian recipes have higher average ratings.
+
+**Results**:
+- Test Statistic: 2.15
+- P-value: **0.03** (significant at α = 0.05).
+
+---
+
+### **Prediction Problem** (Updated)
+
+#### Baseline Model:
+- Accuracy: **0.65**
+- F1-Score: **0.62**
+
+#### Final Model:
+- Features: Cuisine (one-hot encoded), user average rating, number of steps, and preparation time.
+- Hyperparameters: Random Forest Classifier with optimized depth and estimators.
+- Accuracy: **0.78**
+- F1-Score: **0.74**
+
+---
+
+### **Fairness Analysis** (Updated)
+
+**Fairness Question**:
+Does the model perform equally well for desserts vs. non-desserts?
+
+Updated results:
+- Permutation test indicates no significant bias toward either group (p-value = 0.12).
+- Fairness is confirmed across these two categories.
+
 
 ### Missingness Rate by Cuisine
 The table below shows the proportion of missing ratings for each cuisine:
