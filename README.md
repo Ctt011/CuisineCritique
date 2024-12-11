@@ -97,6 +97,16 @@ Replacing `0` with `NaN` ensures that the analysis reflects accurate user prefer
   frameborder="0"
 ></iframe>
 
+## Top 10 Cuisines by Recipe Count
+
+<iframe
+  src="assets/Top_10CusinesbyCusine.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>
+
+
 **Key Insight**: North-American and American cuisines dominate the dataset.
 - **Top Cuisines**: North-American (14,150 recipes) and American cuisines lead, followed by European (4,900) and Asian (4,177) cuisines.
 - Percentages are annotated in bar plots, showcasing the dominance of Western cuisines in the dataset. North-American (14,590 recipes) and American cuisines lead, with European (4,918) and Asian (4,177) cuisines following.
