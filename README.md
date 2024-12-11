@@ -31,6 +31,7 @@ The analysis is based on two datasets:
 | `steps`             | Text description of recipe steps                                                           |
 | `description`       | User-provided description                                                                  |
 
+
 ### `RAW_interactions.csv` Columns
 | Column Name         | Description                                                                                 |
 |---------------------|---------------------------------------------------------------------------------------------|
@@ -57,9 +58,6 @@ The analysis is based on two datasets:
      - `recipe_id`: ID linking to recipes in `RAW_recipes.csv`.
      - `rating`: User rating for the recipe.
      - `review`: Review text submitted by users.
-
-By combining these datasets, we aim to uncover insights into cuisine popularity and its relationship with ratings.
-
 ---
 ## Data Cleaning and Preprocessing
 
