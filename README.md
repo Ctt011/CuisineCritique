@@ -91,21 +91,11 @@ Replacing `0` with `NaN` ensures that the analysis reflects accurate user prefer
 ### **Univariate Analysis** 
 #### Top 10 Cuisines by Recipe Count:
 <iframe
-  src="assets/top-cuisines-updated.html"
-  width="800"
-  height="600"
-  frameborder="0"
-></iframe>
-
-## Top 10 Cuisines by Recipe Count
-
-<iframe
   src="assets/Top_10CusinesbyCusine.html"
   width="800"
   height="600"
   frameborder="0"
 ></iframe>
-
 
 **Key Insight**: North-American and American cuisines dominate the dataset.
 - **Top Cuisines**: North-American (14,150 recipes) and American cuisines lead, followed by European (4,900) and Asian (4,177) cuisines.
