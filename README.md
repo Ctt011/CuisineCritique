@@ -334,7 +334,6 @@ In the final model, we will:
     - Class 0 (Low Rating): 0.28  
     - Class 1 (High Rating): 0.74  
     - Weighted F1-Score: 0.571  
-
 ---
 
 ### Model Interpretation
@@ -390,7 +389,12 @@ Since \(p = 1.0 > \alpha = 0.05\), we fail to reject the null hypothesis. This m
 #### Visualization
 Below is a histogram of the null distribution (\(T_{\text{null}}\)) generated from the permutation test, with the observed test statistic (\(T_{\text{obs}}\)) marked:
 
-![Fairness Analysis Visualization](#)
+<iframe
+  src="assets/permutation_test_fairness.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>
 
 The histogram shows that the observed test statistic (\(T_{\text{obs}}\)) falls well within the distribution of the null hypothesis, reinforcing the conclusion of fairness.
 
