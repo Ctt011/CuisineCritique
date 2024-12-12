@@ -143,6 +143,7 @@ The histogram reveals:
 **Observations**:
 - **Simpler Recipes**: Recipes with fewer steps exhibit more variability in ratings.
 - **Complex Recipes**: Recipes with more steps (20+) are clustered around high ratings, possibly due to their appeal to experienced cooks.
+
 ---
 
 ### **Interesting Aggregates**
