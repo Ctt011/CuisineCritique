@@ -58,14 +58,13 @@ The analysis is based on two datasets:
      - `n_steps`: Number of steps in the recipe.
      - `minutes`: Preparation time in minutes.
      - `rating`: Average rating of the recipe.  
-
 - **Interactions Dataset**
   - **Rows**: 731,927
    - **Relevant Columns**:
      - `recipe_id`: ID linking to recipes in `RAW_recipes.csv`.
      - `rating`: User rating for the recipe.
      - `review`: Review text submitted by users.
----
+     
 ## Data Cleaning and Exploratory Data Analysis
 
 ### Key Steps:
@@ -160,8 +159,7 @@ The histogram reveals:
 - **Top-Rated Cuisines**:
   - Greek and Australian cuisines lead with an average rating of **4.72**, followed by puerto-rican, brazilian, middle-eastern cuisine (**4.71**).
   - Hungarian ranks the lowest in average rating but, has a lower number of recipes than most.
-
-  ---
+---
 
 ## Assessment of Missingness
 ### NMAR Analysis
@@ -335,6 +333,7 @@ In the final model, we will:
     - Class 0 (Low Rating): 0.28  
     - Class 1 (High Rating): 0.74  
     - Weighted F1-Score: 0.571  
+
 ---
 
 ### Model Interpretation
