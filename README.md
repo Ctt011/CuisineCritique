@@ -9,7 +9,7 @@ Food is the epitome of universal language and culture, and analyzing recipes all
 
 
 ### Research Question:
-**Do cuisines significantly affect recipe ratings, and which cuisines are most likely to be rated highly?**
+**Does ethnic orgin of a recipe significantly affect ratings, and which regional types are most likely to be rated highly?**
 
 ---
 ## About the Data
@@ -49,7 +49,6 @@ The analysis is based on two datasets:
 
 
 ## Data Overview
-
 - **Recipes Dataset**
   - **Rows**: 83,782
    - **Relevant Columns**:
@@ -76,6 +75,7 @@ The analysis is based on two datasets:
 5. **New feature**: cuisine type added for better analysis.
 
 In order to efficiently work with the data, we needed to perform various cleaning steps. First, joined by the ‘recipe_id’, we merged the two tables to be able to extract the taste preferences by all their attributes for better analysis.  Upon further inspection, we found ratings of 0 for many recipes and decided to replace these records with ratings of 0 to NaN, to eliminate bias in the ‘ratings’ columns values, which could skew the numbers. After replacing the missing ratings, we calculated the ‘average_rating’ across all recipes of the same ID and ensured that average rating was added back into the dataset. In addition, we created a new feature variable from the ‘tags’ column by extracting the cuisine from each row. I found that the majority The cuisine column contains ethnic histories of the recipe within the column, “tag” which was then parsed out, and added as a new feature (cuisine type). 
+
 ### Cleaned_recipes_df
 
 | name                                 | cuisine        |   minutes | ingredients                                                                                                                                                                                                                             |   n_ingredients |   average_rating |   n_steps |
@@ -128,8 +128,9 @@ The histogram reveals:
 ></iframe>
 
 **Key Insight**:
-- Italian, Greek, and Australian cuisines tend to receive the highest ratings.
-- North-American and American cuisines show a broader spread in ratings, indicating variability in user satisfaction.
+- Spanish, South-west-pacific, and Greek cuisines tend to receive the highest ratings.
+- North-American cuisines shows the broadest spread in ratings, indicating variability in user satisfaction.
+
 
 #### Number of Steps vs. Rating:
 <iframe
