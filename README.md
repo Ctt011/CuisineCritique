@@ -217,6 +217,31 @@ We also analyzed the missingness of the `average_rating` column in the dataset a
 The missingness of `average_rating` is likely dependent on `minutes` but less so on `n_steps`. These findings suggest that preparation time might influence user behavior around rating submissions. Further exploration could involve additional columns or external data sources to understand the data-generating process.
 
 ---
+## Hypothesis Testing
+
+- **Null Hypothesis (H₀):** The mean rating of Greek recipes is the same as the overall mean rating of all recipes. Any observed difference in mean ratings is due to random chance.
+- **Alternative Hypothesis (H₁):** The mean rating of Greek recipes is higher than the overall mean rating of all recipes.
+
+## Test Statistic
+- The test statistic used is the difference in means between Greek recipes' ratings and the overall mean rating.
+- **Observed Statistic:** 0.0996
+- **P-value:** 0.0
+
+---
+The permutation test was conducted with 1,000 permutations
+<iframe
+  src="assets/greek_cuisine_test.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>
+
+---
+### Conclusion
+Given the p-value is effectively 0.0 (less than a typical significance level of 0.05):
+- **Conclusion:** We reject the null hypothesis and conclude that Greek recipes have significantly higher ratings than the overall average at the chosen significance level.
+
+---
 ## Framing a Prediction Problem
 
 **Prediction Problem**:
