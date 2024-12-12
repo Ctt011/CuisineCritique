@@ -1,4 +1,4 @@
-# Ratings and Cuisine Popularity
+# Ratings Popularity by Cuisine
 
 by [Camille Tran] (Ctt011@ucsd.edu)
 website: https://ctt011.github.io/CuisineCritique/
@@ -66,7 +66,7 @@ The analysis is based on two datasets:
      - `rating`: User rating for the recipe.
      - `review`: Review text submitted by users.
 ---
-## Data Cleaning and Preprocessing
+## Data Cleaning and Exploratory Data Analysis
 
 ### Key Steps:
 1. **Merging**: Combine the recipes and interactions datasets on the `recipe_id` column to link recipe details with their ratings.
