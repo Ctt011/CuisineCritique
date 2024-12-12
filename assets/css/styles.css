@@ -1,0 +1,18 @@
+/* Table Styling */
+table {
+  width: 100%; /* Make the table take up the full width */
+  border-collapse: collapse; /* Remove double borders */
+  margin: 1em 0; /* Add spacing above and below the table */
+  font-size: 1rem; /* Set a standard font size */
+}
+
+table th, table td {
+  border: 1px solid #ddd; /* Add light borders */
+  padding: 8px; /* Add padding for readability */
+  text-align: left; /* Align text to the left */
+}
+
+table th {
+  background-color: #f4f4f4; /* Set a light gray background for headers */
+  font-weight: bold; /* Make headers bold */
+}
