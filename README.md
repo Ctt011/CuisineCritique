@@ -4,12 +4,12 @@ by [Camille Tran] (Ctt011@ucsd.edu)
 website: https://ctt011.github.io/CuisineCritique/
 
 ---
-## 1. Introduction
+## Introduction
 
 Food is the epitome of universal language and culture, and analyzing recipes allows us to explore cultural diversity and user preferences. This project leverages data from Food.com to investigate whether there is a relationship between cuisines of a certain ethnic type and their general perceived taste response of either a favorable rating or a not-so  favorable response with a lower taste rating.Although there are limitless and varying factors which could skew results one way or another, such as taste preferences among individuals, we were curious to see the relationships that exists for recipes’ tastes preferences in regards to its’ ethnic origin.
 
 
-### Research Question:
+#### Research Question:
 **Does ethnic orgin of a recipe significantly affect ratings, and which regional types are most likely to be rated highly?**
 
 ---
