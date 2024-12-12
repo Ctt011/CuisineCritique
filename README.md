@@ -163,18 +163,6 @@ The histogram reveals:
 ---
 
 ## Assessment of Missingness
-
-| Cuisine              | Missingness Rate |
-|-----------------------|------------------|
-| African              | 0.02            |
-| Asian                | 0.03            |
-| Australian           | 0.02            |
-| Brazilian            | 0.06            |
-| Scandinavian         | 0.01            |
-
-- Missingness is higher for Brazilian (6%) and South-American (5%) cuisines, indicating lower user engagement.
-- Scandinavian cuisines have the lowest missingness rate (1%), reflecting consistent user feedback.
-
 ### NMAR Analysis
 We hypothesize that the missing ratings in the dataset are **Not Missing at Random (NMAR)**. This is because missingness in the `rating` column may depend on factors like user preferences or the complexity of the recipe, which are not explicitly captured in the dataset. For example, a user might avoid rating recipes they found too complex or didn’t finish cooking.
 
