@@ -20,32 +20,6 @@ The analysis is based on two datasets:
 1. **`RAW_recipes.csv`**: Contains detailed information about recipes, including their names, preparation time, ingredients, steps, and tags.
 2. **`RAW_interactions.csv`**: Includes user interactions with the recipes, such as ratings and reviews.
 
-### `RAW_recipes.csv` Columns
-| Column Name       | Description                                                                                      |  
-|--------------------|--------------------------------------------------------------------------------------------------|  
-| `name`            | Recipe name                                                                                     |  
-| `id`              | Recipe ID                                                                                       |  
-| `minutes`         | Minutes to prepare the recipe                                                                    |  
-| `contributor_id`  | User ID who submitted this recipe                                                                |  
-| `submitted`       | Date the recipe was submitted                                                                    |  
-| `tags`            | Food.com tags for the recipe, often containing cuisine information                               |  
-| `nutrition`       | Nutrition information in the form `[calories, fat, sugar, sodium, protein, saturated fat, carbs]`|  
-| `n_steps`         | Number of steps in the recipe                                                                    |  
-| `steps`           | Text description of recipe steps                                                                 |  
-| `description`     | User-provided description                                                                        |  
-| `ingredients`     | List of ingredients used in the recipe                                                          |  
-| `n_ingredients`   | Number of ingredients in the recipe                                                             |  
-
-
-### `RAW_interactions.csv` Columns
-| Column Name         | Description                                                                                 |
-|---------------------|---------------------------------------------------------------------------------------------|
-| `user_id`           | User ID of the person reviewing the recipe                                                 |
-| `recipe_id`         | ID of the recipe being reviewed                                                            |
-| `date`              | Date of interaction                                                                        |
-| `rating`            | Rating given to the recipe (0–5 scale)                                                     |
-| `review`            | Text review of the recipe (not used for this analysis)                                     |
-
 ## RAW_recipes.csv Columns
 
 | Column Name    | Description                                                                                     |
@@ -170,7 +144,6 @@ The histogram reveals:
 - **Complex Recipes**: Recipes with more steps (20+) are clustered around high ratings, possibly due to their appeal to experienced cooks.
 - The scatterplot includes correlation values (`Correlation = 0.35`), indicating a moderate positive relationship between steps and ratings.
 - Recipes with more steps tend to cluster around higher ratings, confirming complexity appeals to experienced cooks.
-
 
 ---
 
