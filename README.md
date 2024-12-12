@@ -13,9 +13,9 @@ Food is the epitome of universal language and culture, and analyzing recipes all
 **Does ethnic orgin of a recipe significantly affect ratings, and which regional types are most likely to be rated highly?**
 
 ---
-## About the Data
+#### About the Data
 
-To start exploring taste preferences among ethnic groups, we have two datasets to work with. The first dataset contains approximately 84k recipes and their respective recipe names, preparation time, number of ingredients and steps, as well as other information such as nutritional content and descriptive data in tag.  We were particularly interested in how in `n_steps`, prep time as we were curious to see how this impacted taste preferences.  For the second dataset, there were over 730k rating records, with primary interest in the user rating and pertinent data submitted in the ‘tag’ column that could potentially give  us more insight into our research.
+To start exploring taste preferences among ethnic groups, we have two datasets to work with. The first dataset contains approximately 84k recipes and their respective recipe names, preparation time, number of ingredients and steps, as well as other information such as nutritional content and descriptive data in tag.  We were particularly interested in how in `n_steps`, prep time as we were curious to see how this impacted taste preferences.For the second dataset, there were over 730k rating records, with primary interest in the user rating and pertinent data submitted in the ‘tag’ column that could potentially give  us more insight into our research.
 
 The analysis is based on two datasets:
 1. **`RAW_recipes.csv`**: Contains detailed information about recipes, including their names, preparation time, ingredients, steps, and tags.
