@@ -21,7 +21,7 @@ The analysis is based on two datasets:
 1. **`RAW_recipes.csv`**: Contains detailed information about recipes, including their names, preparation time, ingredients, steps, and tags.
 2. **`RAW_interactions.csv`**: Includes user interactions with the recipes, such as ratings and reviews.
 
-## RAW_recipes.csv Columns
+#### RAW_recipes.csv Columns
 
 | Column Name    | Description                                                                                     |
 |:---------------|:------------------------------------------------------------------------------------------------|
@@ -38,7 +38,7 @@ The analysis is based on two datasets:
 | ingredients    | List of ingredients used in the recipe                                                          |
 | n_ingredients  | Number of ingredients in the recipe                                                             |
 
-## RAW_interactions.csv Columns
+#### RAW_interactions.csv Columns
 
 | Column Name   | Description                                            |
 |:--------------|:-------------------------------------------------------|
