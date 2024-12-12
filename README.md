@@ -354,7 +354,39 @@ The final model improves upon the baseline model in several ways:
 
 ---
 
----
+### Fairness Analysis
 
-## Fairness Analysis
+## Choice of Groups
+- **Group X**: Recipes labeled as `italian`.
+- **Group Y**: Recipes labeled as `mexican`.
+
+## Evaluation Metric
+- **Metric**: Precision  
+Precision was chosen because it evaluates the model's ability to correctly predict high ratings for each group, which is critical for understanding potential disparities.
+
+## Hypotheses
+- **Null Hypothesis (\(H_0\))**: The model is fair. The precision for recipes in the `italian` group is equal to the precision for recipes in the `mexican` group. Any differences are due to random chance.  
+- **Alternative Hypothesis (\(H_A\))**: The model is unfair. The precision for recipes in the `italian` group is significantly different from the precision for recipes in the `mexican` group.
+
+#### Test Statistic and Significance Level
+- **Test Statistic (\(T\))**: The absolute difference in precision scores between the `italian` and `mexican` groups:
+  \[
+  T = |\text{Precision}_{italian} - \text{Precision}_{mexican}|
+  \]
+- **Significance Level (\(\alpha\))**: 0.05
+
+#### Results
+- **Observed Test Statistic (\(T_{\text{obs}}\))**: \(T_{\text{obs}} = 0.8265\)
+- **p-value**: \(p = 1.0\)
+
+#### Conclusion
+Since \(p = 1.0 > \alpha = 0.05\), we fail to reject the null hypothesis. This means there is insufficient evidence to suggest that the model's precision differs significantly between the `italian` and `mexican` groups. The model is deemed fair based on this analysis.
+
+#### Visualization
+Below is a histogram of the null distribution (\(T_{\text{null}}\)) generated from the permutation test, with the observed test statistic (\(T_{\text{obs}}\)) marked:
+
+![Fairness Analysis Visualization](#)
+
+The histogram shows that the observed test statistic (\(T_{\text{obs}}\)) falls well within the distribution of the null hypothesis, reinforcing the conclusion of fairness.
+
 
