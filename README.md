@@ -121,7 +121,7 @@ The histogram reveals:
 
 #### Distribution of Ratings by Cuisine:
 <iframe
-  src="assets/ratings-vs-cuisine.html"
+  src="assets/distribution-ratings-by-cuisine.html"
   width="800"
   height="600"
   frameborder="0"
