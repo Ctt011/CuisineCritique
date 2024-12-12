@@ -144,9 +144,6 @@ The histogram reveals:
 **Observations**:
 - **Simpler Recipes**: Recipes with fewer steps exhibit more variability in ratings.
 - **Complex Recipes**: Recipes with more steps (20+) are clustered around high ratings, possibly due to their appeal to experienced cooks.
-- The scatterplot includes correlation values (`Correlation = 0.35`), indicating a moderate positive relationship between steps and ratings.
-- Recipes with more steps tend to cluster around higher ratings, confirming complexity appeals to experienced cooks.
-
 ---
 
 ### **Interesting Aggregates**
