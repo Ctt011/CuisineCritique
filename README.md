@@ -159,8 +159,9 @@ The histogram reveals:
 **Key Insights**:
 - **Top-Rated Cuisines**:
   - Greek and Australian cuisines lead with an average rating of **4.72**, followed by puerto-rican, brazilian, middle-eastern cuisine (**4.71**).
-  - Hungarian ranks the lowest in average rating but, has a lower number of recipes than most. 
----
+  - Hungarian ranks the lowest in average rating but, has a lower number of recipes than most.
+
+  ---
 
 ## Assessment of Missingness
 ### NMAR Analysis
@@ -373,10 +374,7 @@ Precision was chosen because it evaluates the model's ability to correctly predi
 - **Alternative Hypothesis (Hₐ)**: The model is unfair. The precision for recipes in the `italian` group is significantly different from the precision for recipes in the `mexican` group.
 
 #### Test Statistic and Significance Level
-- **Test Statistic (T)**: The absolute difference in precision scores between the `italian` and `mexican` groups:
-
-  **T = |Precision₍italian₎ - Precision₍mexican₎|**
-
+- **Test Statistic (T)**: The absolute difference in precision scores between the `italian` and `mexican` groups
 - **Significance Level (α)**: 0.05
 
 #### Results
