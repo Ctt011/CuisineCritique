@@ -158,31 +158,8 @@ The histogram reveals:
 
 **Key Insights**:
 - **Top-Rated Cuisines**:
-  - Greek and Australian cuisines lead with an average rating of **4.72**, followed by Brazilian cuisine (**4.71**).
-  - Scandinavian, Spanish, and French cuisines rank slightly lower but remain highly rated.
-- **Lower Ratings**: Southern-United-States and Indian cuisines have comparatively lower average ratings, presenting opportunities to explore user preferences.
-
-| Cuisine              | Avg Rating | Std. Dev. |
-|----------------------|------------|-----------|
-| Greek                | 4.72       | 0.08      |
-| Australian           | 4.72       | 0.09      |
-| Brazilian            | 4.71       | 0.10      |
-| Scandinavian         | 4.70       | 0.12      |
-| Spanish              | 4.69       | 0.15      |
-| French               | 4.68       | 0.14      |
-
-
----
-### Intresting Aggreates
-
-Average Rating by Cuisine:
-The bar chart highlights cuisines with the highest average ratings. European, Australian, and Russian cuisines score the highest, possibly reflecting a bias toward traditional and diverse recipes in these regions.
-
-Key Observations:
-
-European and Australian cuisines consistently rank higher in both count and average rating, showcasing their popularity among users.
-The average ratings for cuisines like "Southern-United-States" and "Indian" are lower compared to others, indicating room for potential exploration into user preferences.
-
+  - Greek and Australian cuisines lead with an average rating of **4.72**, followed by puerto-rican, brazilian, middle-eastern cuisine (**4.71**).
+  - Hungarian ranks the lowest in average rating but, has a lower number of recipes than most. 
 ---
 
 ## Assessment of Missingness
