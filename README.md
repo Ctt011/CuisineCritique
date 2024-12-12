@@ -5,13 +5,16 @@ by [Camille Tran] (Ctt011@ucsd.edu)
 ---
 ## 1. Introduction
 
-Food is a universal language, and analyzing recipes allows us to explore cultural diversity and user preferences. This project leverages data from Food.com to investigate the relationship between cuisines and recipe ratings.
+Food is the epitome of universal language and culture, and analyzing recipes allows us to explore cultural diversity and user preferences. This project leverages data from Food.com to investigate whether there is a relationship between cuisines of a certain ethnic type and their general perceived taste response of either a favorable rating or a not-so  favorable response with a lower taste rating.Although there are limitless and varying factors which could skew results one way or another, such as taste preferences among individuals, we were curious to see the relationships that exists for recipes’ tastes preferences in regards to its’ ethnic origin.
+
 
 ### Research Question:
 **Do cuisines significantly affect recipe ratings, and which cuisines are most likely to be rated highly?**
 
 ---
 ## About the Data
+
+To start exploring taste preferences among ethnic groups, we have two datasets to work with. The first dataset contains approximately 84k recipes and their respective recipe names, preparation time, number of ingredients and steps, as well as other information such as nutritional content and descriptive data in tag.  We were particularly interested in how in `n_steps`, prep time as we were curious to see how this impacted taste preferences.  For the second dataset, there were over 730k rating records, with primary interest in the user rating and pertinent data submitted in the ‘tag’ column that could potentially give  us more insight into our research.
 
 The analysis is based on two datasets:
 1. **`RAW_recipes.csv`**: Contains detailed information about recipes, including their names, preparation time, ingredients, steps, and tags.
@@ -68,23 +71,9 @@ The analysis is based on two datasets:
 2. **Handling Missing/Invalid Ratings**: Replace all ratings of `0` with `NaN` to ensure they don't distort the analysis.
 3. **Calculating Average Ratings**: Compute the average rating for each recipe and add it back to the `recipes` dataset for further analysis.
 4. **Extracting Cuisines**: Parse the `tags` column to identify cuisines associated with each recipe.
-5. **New features**: (e.g., cuisine type) were added for better analysis.
+5. **New feature**: cuisine type added for better analysis.
 
-### Justification for Replacing Ratings of 0 with `NaN`
-
-In the `RAW_interactions.csv` dataset, a rating of `0` likely represents missing or invalid data rather than an actual user evaluation of the recipe. Including these `0` values in the analysis would incorrectly lower the average ratings of recipes and introduce bias. By replacing `0` with `NaN`:
-
-1. **Improves Data Integrity**:
-   - Ensures that only valid user ratings contribute to the average rating calculation.
-   - Prevents invalid ratings from distorting the analysis of trends and patterns.
-
-2. **Alignment with Statistical Practices**:
-   - Missing or invalid data is typically excluded from summary statistics (e.g., mean, median) to avoid skewed results.
-
-3. **Focus on Meaningful Information**:
-   - Recipes with actual user feedback (ratings of 1–5) provide more meaningful insights about cuisine popularity and recipe quality.
-
-Replacing `0` with `NaN` ensures that the analysis reflects accurate user preferences and supports reliable conclusions.
+In order to efficiently work with the data, we needed to perform various cleaning steps. First, joined by the ‘recipe_id’, we merged the two tables to be able to extract the taste preferences by all their attributes for better analysis.  Upon further inspection, we found ratings of 0 for many recipes and decided to replace these records with ratings of 0 to NaN, to eliminate bias in the ‘ratings’ columns values, which could skew the numbers. After replacing the missing ratings, we calculated the ‘average_rating’ across all recipes of the same ID and ensured that average rating was added back into the dataset. In addition, we created a new feature variable from the ‘tags’ column by extracting the cuisine from each row. I found that the majority The cuisine column contains ethnic histories of the recipe within the column, “tag” which was then parsed out, and added as a new feature (cuisine type). 
 
 ---
 
