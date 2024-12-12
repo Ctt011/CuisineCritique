@@ -98,9 +98,9 @@ In order to efficiently work with the data, we needed to perform various cleanin
 ></iframe>
 
 **Key Insight**: North-American and American cuisines dominate the dataset.
-- **Top Cuisines**: North-American (14,150 recipes) and American cuisines lead, followed by European (4,900) and Asian (4,177) cuisines.
-- Percentages are annotated in bar plots, showcasing the dominance of Western cuisines in the dataset. North-American (14,590 recipes) and American cuisines lead, with European (4,918) and Asian (4,177) cuisines following.
-- The dominance of Western cuisines likely reflects the dataset's origin and user base.
+- **Top Cuisines**: North-American (14,000 recipes) and American cuisines lead, followed by European (4,600) and Asian (4,100) cuisines.
+- Percentages are annotated in bar plots, showcasing the dominance of Western cuisines in the dataset. North-American (14,000 recipes) and American cuisines lead, with European (4,600) and Asian (4,100) cuisines following.
+
 
 #### Distribution of Recipe Ratings:
 <iframe
