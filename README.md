@@ -163,7 +163,8 @@ The histogram reveals:
 
 ## Assessment of Missingness
 ### NMAR Analysis
-We hypothesize that the missing ratings in the dataset are **Not Missing at Random (NMAR)**. This is because missingness in the `rating` column may depend on factors like user preferences or the complexity of the recipe, which are not explicitly captured in the dataset. For example, a user might avoid rating recipes they found too complex or didn’t finish cooking.
+
+In my dataset, the column ‘Review’ is likely to be **Not Missing at Random (NMAR)** , as it's not solely dependent on observed variables like rating. Handing NMAR values is challenging to handle since the missing mechanism cannot be fully explained or qualitatively calculated by other observed data. Which makes it necessary to consider the biases surrounding the data set, we also have to take into consideration that the user might leave reviews for recipes that they are most familiar with , or skip leaving reviews all together. 
 
 ---
 
