@@ -369,25 +369,24 @@ The final model improves upon the baseline model in several ways:
 Precision was chosen because it evaluates the model's ability to correctly predict high ratings for each group, which is critical for understanding potential disparities.
 
 ## Hypotheses
-- **Null Hypothesis (\(H_0\))**: The model is fair. The precision for recipes in the `italian` group is equal to the precision for recipes in the `mexican` group. Any differences are due to random chance.  
-- **Alternative Hypothesis (\(H_A\))**: The model is unfair. The precision for recipes in the `italian` group is significantly different from the precision for recipes in the `mexican` group.
+- **Null Hypothesis (H₀)**: The model is fair. The precision for recipes in the `italian` group is equal to the precision for recipes in the `mexican` group. Any differences are due to random chance.  
+- **Alternative Hypothesis (Hₐ)**: The model is unfair. The precision for recipes in the `italian` group is significantly different from the precision for recipes in the `mexican` group.
 
 #### Test Statistic and Significance Level
-- **Test Statistic (\(T\))**: The absolute difference in precision scores between the `italian` and `mexican` groups:
-  \[
-  T = |\text{Precision}_{italian} - \text{Precision}_{mexican}|
-  \]
-- **Significance Level (\(\alpha\))**: 0.05
+- **Test Statistic (T)**: The absolute difference in precision scores between the `italian` and `mexican` groups:
+
+  **T = |Precision₍italian₎ - Precision₍mexican₎|**
+
+- **Significance Level (α)**: 0.05
 
 #### Results
-- **Observed Test Statistic (\(T_{\text{obs}}\))**: \(T_{\text{obs}} = 0.8265\)
-- **p-value**: \(p = 1.0\)
+- **Observed Test Statistic (Tₒᵦₛ)**: Tₒᵦₛ = 0.8265
+- **p-value**: p = 1.0
 
 #### Conclusion
-Since \(p = 1.0 > \alpha = 0.05\), we fail to reject the null hypothesis. This means there is insufficient evidence to suggest that the model's precision differs significantly between the `italian` and `mexican` groups. The model is deemed fair based on this analysis.
-
+Since p = 1.0 > α = 0.05, we fail to reject the null hypothesis. This means there is insufficient evidence to suggest that the model's precision differs significantly between the `italian` and `mexican` groups. The model is deemed fair based on this analysis.
 #### Visualization
-Below is a histogram of the null distribution (\(T_{\text{null}}\)) generated from the permutation test, with the observed test statistic (\(T_{\text{obs}}\)) marked:
+Below is a histogram of the null distribution (Tₙᵤₗₗ) generated from the permutation test, with the observed test statistic (Tₒᵦₛ) marked:
 
 <iframe
   src="assets/permutation_test_fairness.html"
