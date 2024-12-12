@@ -18,18 +18,20 @@ The analysis is based on two datasets:
 2. **`RAW_interactions.csv`**: Includes user interactions with the recipes, such as ratings and reviews.
 
 ### `RAW_recipes.csv` Columns
-| Column Name         | Description                                                                                 |
-|---------------------|---------------------------------------------------------------------------------------------|
-| `name`              | Recipe name                                                                                |
-| `id`                | Recipe ID                                                                                  |
-| `minutes`           | Minutes to prepare the recipe                                                              |
-| `contributor_id`    | User ID who submitted this recipe                                                          |
-| `submitted`         | Date the recipe was submitted                                                              |
-| `tags`              | Food.com tags for the recipe, often containing cuisine information                          |
-| `nutrition`         | Nutrition information in the form `[calories, fat, sugar, sodium, protein, saturated fat, carbs]` |
-| `n_steps`           | Number of steps in the recipe                                                              |
-| `steps`             | Text description of recipe steps                                                           |
-| `description`       | User-provided description                                                                  |
+| Column Name       | Description                                                                                      |  
+|--------------------|--------------------------------------------------------------------------------------------------|  
+| `name`            | Recipe name                                                                                     |  
+| `id`              | Recipe ID                                                                                       |  
+| `minutes`         | Minutes to prepare the recipe                                                                    |  
+| `contributor_id`  | User ID who submitted this recipe                                                                |  
+| `submitted`       | Date the recipe was submitted                                                                    |  
+| `tags`            | Food.com tags for the recipe, often containing cuisine information                               |  
+| `nutrition`       | Nutrition information in the form `[calories, fat, sugar, sodium, protein, saturated fat, carbs]`|  
+| `n_steps`         | Number of steps in the recipe                                                                    |  
+| `steps`           | Text description of recipe steps                                                                 |  
+| `description`     | User-provided description                                                                        |  
+| `ingredients`     | List of ingredients used in the recipe                                                          |  
+| `n_ingredients`   | Number of ingredients in the recipe                                                             |  
 
 
 ### `RAW_interactions.csv` Columns
