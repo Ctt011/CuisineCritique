@@ -1,6 +1,7 @@
 # Ratings and Cuisine Popularity
 
 by [Camille Tran] (Ctt011@ucsd.edu)
+website: https://ctt011.github.io/CuisineCritique/
 
 ---
 ## 1. Introduction
