@@ -291,6 +291,68 @@ In the final model, we will:
 
 ## Final Model
 
+- **Model Type**: Random Forest Classifier  
+- **Hyperparameters Used**:  
+  - `max_depth`: None (no restriction on tree depth)  
+  - `min_samples_split`: 10 (minimum samples required to split a node)  
+  - `n_estimators`: 100 (number of trees in the forest)  
+
+- **Features**:  
+  1. **`minutes`**: Quantitative feature representing the time required for a recipe.  
+  2. **`n_ingredients`**: Quantitative feature representing the number of ingredients in a recipe.  
+  3. **`complexity_score`**: Derived quantitative feature calculated as `minutes / (n_ingredients + 1)`.  
+  4. **`cuisine`**: Nominal feature representing the cuisine category of the recipe.  
+
+  These features were selected based on their relevance to predicting whether a recipe has a high rating (`average_rating >= 4.5`).
+
+---
+
+### Preprocessing Steps
+
+- **Numeric Features**: Standardized using `StandardScaler` to ensure uniform scaling and prevent dominance by large numeric values.  
+- **Categorical Features**: Encoded using `OneHotEncoder` to transform categorical data (`cuisine`) into a numerical format suitable for machine learning models.  
+- **Data Balancing**: Applied SMOTE (Synthetic Minority Oversampling Technique) to address the class imbalance in the target variable (`high_rating`: 75.08% positive vs. 24.92% negative).
+
+---
+
+### Evaluation Results
+
+- **Test Set Performance**:
+  - **Accuracy**: 61%  
+  - **Precision**:  
+    - Class 0 (Low Rating): 0.26  
+    - Class 1 (High Rating): 0.76  
+  - **Recall**:  
+    - Class 0 (Low Rating): 0.30  
+    - Class 1 (High Rating): 0.72  
+  - **F1-Score**:  
+    - Class 0 (Low Rating): 0.28  
+    - Class 1 (High Rating): 0.74  
+    - Weighted F1-Score: 0.571  
+
+---
+
+### Model Interpretation
+
+- The model performs significantly better for recipes with **high ratings** (`Class 1`) than for recipes with **low ratings** (`Class 0`):
+  - **Precision for Class 1** is 76%, meaning 76% of recipes predicted as highly rated are indeed highly rated.  
+  - **Recall for Class 1** is 72%, indicating the model identifies 72% of all highly rated recipes.  
+
+- For recipes with **low ratings** (`Class 0`), the model struggles due to the inherent class imbalance despite the use of SMOTE:  
+  - **Precision for Class 0** is 26%, indicating higher misclassification of low-rated recipes as highly rated.
+
+- The **macro average F1-Score** (0.51) reflects moderate handling of both classes, with better performance for the majority class (high ratings).
+
+---
+
+### Improvement from Baseline Model
+
+The final model improves upon the baseline model in several ways:
+- **Feature Engineering**: Added `n_ingredients` and `complexity_score`, which improved predictive performance.  
+- **Hyperparameter Tuning**: Used `GridSearchCV` to identify optimal settings for model depth, number of estimators, and minimum split size, enhancing model generalization.  
+- **Overall Performance**: The weighted F1-Score increased slightly, showing improved balance in predictions compared to the baseline model.
+
+---
 
 ---
 
