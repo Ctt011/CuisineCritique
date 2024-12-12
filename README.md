@@ -227,7 +227,7 @@ The results of the permutation test are as follows:
 **Conclusion:** The p-value of 0.038 suggests that we reject the null hypothesis at a 5% significance level. This indicates that missingness in `rating` is likely dependent on the cuisine type.
 
 ---
-### **Hypothesis Testing** (Updated)
+### **Hypothesis Testing**
 **Hypothesis**:
 - Null Hypothesis (H₀): Italian and American cuisines have the same average ratings.
 - Alternative Hypothesis (H₁): Italian recipes have higher average ratings.
@@ -235,4 +235,64 @@ The results of the permutation test are as follows:
 **Results**:
 - Test Statistic: 2.15
 - P-value: **0.03** (significant at α = 0.05).
+
+
+## Framing a Prediction Problem
+
+**Prediction Problem**:
+Using recipe features such as cuisine, preparation time, and number of steps, predict whether a recipe receives a high rating (> 4.5). This is a **binary classification** problem evaluated using **accuracy** and **F1-score**.
+
+---
+
+## Baseline Model
+#### Features and Preprocessing
+For the baseline model, we used two features:
+1. **`cuisine` (nominal)**: This categorical feature was one-hot encoded using `OneHotEncoder`, transforming the column into multiple binary columns representing different cuisine types. This allowed the model to handle the categorical nature of the feature effectively.
+2. **`minutes` (quantitative)**: This numerical feature was scaled using `StandardScaler` to standardize its values. Scaling helps the model treat all numerical features on the same scale and improves performance.
+
+The response variable, **`high_rating`**, was defined as a binary indicator where recipes with an average rating of 4.5 or above were considered high-rated (1), and others were low-rated (0). The dataset showed a class imbalance with approximately 75% high-rated and 25% low-rated recipes, requiring a technique like oversampling for better balance.
+
+To address the imbalance, we applied **SMOTE (Synthetic Minority Oversampling Technique)** after preprocessing the training data. This step synthetically increased the representation of the minority class (`Low Rating`), leading to a more balanced training set.
+
+#### Model
+We implemented a **Random Forest Classifier** with balanced class weights to further handle the class imbalance and used it within a `Pipeline` that includes preprocessing. Random Forest was chosen as it provides robust and interpretable results for tabular data with both categorical and numerical features.
+
+#### Results
+The model was evaluated using the test set, and the following metrics were obtained:
+
+1. **Precision**:
+   - **Low Rating**: 26% of the recipes predicted as low-rated were actually low-rated. This relatively low precision indicates that the model struggles with false positives for the `Low Rating` class.
+   - **High Rating**: 77% of the recipes predicted as high-rated were actually high-rated, which demonstrates better performance for the majority class.
+
+2. **Recall**:
+   - **Low Rating**: 58% of the actual low-rated recipes were correctly identified by the model. This is a reasonable improvement, given the imbalanced dataset and the difficulty of identifying low-rated recipes.
+   - **High Rating**: 46% of the actual high-rated recipes were correctly classified. This lower recall indicates that many high-rated recipes were misclassified as low-rated.
+
+3. **F1-Score**:
+   - **Low Rating**: The F1-score for the low-rated class is 0.36, reflecting the trade-off between precision and recall for this minority class.
+   - **High Rating**: The F1-score for the high-rated class is 0.57, demonstrating better overall performance for the majority class.
+   - **Overall F1-Score**: The weighted F1-score across both classes is 0.52.
+
+4. **Accuracy**:
+   - The model achieved an overall accuracy of 49%, which is not particularly high. However, accuracy is not a reliable metric for imbalanced datasets, so the F1-score provides a better evaluation of the model's performance.
+
+#### Interpretation of Results
+The baseline model demonstrates balanced performance across both classes, primarily due to the use of SMOTE and balanced class weights. While the model achieves better precision for the `High Rating` class (the majority class), it sacrifices some precision to improve recall for the `Low Rating` class. The weighted F1-score of 0.52 suggests that there is room for improvement, particularly in identifying low-rated recipes.
+
+The use of only two features, `cuisine` and `minutes`, limits the predictive power of the baseline model. However, it sets a solid foundation for further improvement in the final model by incorporating additional meaningful features and optimizing hyperparameters.
+
+#### Next Steps
+In the final model, we will:
+1. Engineer new features, such as `n_ingredients` (the number of ingredients in a recipe) and a custom `complexity_score`.
+2. Perform hyperparameter tuning on the Random Forest Classifier or explore alternative models.
+3. Reevaluate the performance to assess improvements in the model's ability to generalize and handle the class imbalance effectively.
+
+---
+
+## Final Model
+
+
+---
+
+## Fairness Analysis
 
