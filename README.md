@@ -166,8 +166,6 @@ The histogram reveals:
 ### NMAR Analysis
 We hypothesize that the missing ratings in the dataset are **Not Missing at Random (NMAR)**. This is because missingness in the `rating` column may depend on factors like user preferences or the complexity of the recipe, which are not explicitly captured in the dataset. For example, a user might avoid rating recipes they found too complex or didn’t finish cooking.
 
-To test this, we would need additional data, such as user feedback on why they didn’t leave ratings. This would allow us to determine whether the missingness is due to unobserved variables, confirming the NMAR assumption.
-
 ---
 
 ### Missingness Dependency
@@ -177,29 +175,48 @@ To explore if missingness in `rating` depends on other variables, we performed p
 - **Alternative Hypothesis (H₁):** The missingness in `rating` depends on the cuisine type.
 
 The results of the permutation test are as follows:
-- **Observed Statistic:** 117.41
-- **P-value:** 0.038
+- **Observed Statistic:** 117.34
+- **P-value:**  0.039
 
 <iframe
-  src="assets/missingness-permutation-test.html"
+  src="assets/dependency_test_cuisine.html"
   width="800"
   height="600"
   frameborder="0"
 ></iframe>
 
-**Conclusion:** The p-value of 0.038 suggests that we reject the null hypothesis at a 5% significance level. This indicates that missingness in `rating` is likely dependent on the cuisine type.
+**Conclusion:** The p-value of 0.039 suggests that we reject the null hypothesis at a 5% significance level. This indicates that missingness in `rating` is likely dependent on the cuisine type.
 
 ---
-### **Hypothesis Testing**
-**Hypothesis**:
-- Null Hypothesis (H₀): Italian and American cuisines have the same average ratings.
-- Alternative Hypothesis (H₁): Italian recipes have higher average ratings.
+We also analyzed the missingness of the `average_rating` column in the dataset and evaluated its dependency on two other columns: `minutes` and `n_steps`.
 
-**Results**:
-- Test Statistic: 2.15
-- P-value: **0.03** (significant at α = 0.05).
+#### Dependent Column: `minutes`
+- **Hypothesis**: The missingness of `average_rating` depends on the preparation time (`minutes`).
+- **Observed Statistic**: 117.34
+- **P-value**: 0.023
+- **Interpretation**: The p-value is less than 0.05, indicating that the missingness of `average_rating` is likely dependent on the `minutes` column. Recipes with missing ratings tend to have significantly different preparation times compared to those with ratings.
 
+#### Independent Column: `n_steps`
+- **Hypothesis**: The missingness of `average_rating` does not depend on the number of steps (`n_steps`).
+- **Observed Statistic**: 1.49
+- **P-value**: 0.0
+- **Interpretation**: Although the observed statistic is small, the p-value suggests there is evidence of dependence. This result is unexpected and may warrant further exploration.
 
+---
+
+<iframe
+  src="assets/dependency_test.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>
+
+---
+
+### Conclusion
+The missingness of `average_rating` is likely dependent on `minutes` but less so on `n_steps`. These findings suggest that preparation time might influence user behavior around rating submissions. Further exploration could involve additional columns or external data sources to understand the data-generating process.
+
+---
 ## Framing a Prediction Problem
 
 **Prediction Problem**:
