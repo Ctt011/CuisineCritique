@@ -153,7 +153,7 @@ The histogram reveals:
 
 #### Average Ratings by Cuisine:
 <iframe
-  src="assets/average-ratings.html"
+  src="assets/pivot_table_cuisine.html"
   width="800"
   height="600"
   frameborder="0"
