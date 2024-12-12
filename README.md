@@ -133,7 +133,7 @@ The histogram reveals:
 
 #### Number of Steps vs. Rating:
 <iframe
-  src="assets/steps-vs-rating.html"
+  src="assets/relationship_steps_rating.html"
   width="800"
   height="600"
   frameborder="0"
